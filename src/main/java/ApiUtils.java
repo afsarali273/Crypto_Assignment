@@ -32,7 +32,8 @@ public class ApiUtils {
         params.put("instrument_name", instrumentName);
         params.put("timeframe", timeFrame + "m");
 
-       return getAPiResponse(GET_CANDLE_STICK_ENDPOINT,params).as(CandleStickResponsePojo.class);
+       return getAPiResponse(GET_CANDLE_STICK_ENDPOINT,params)
+               .as(CandleStickResponsePojo.class);
 
     }
 }

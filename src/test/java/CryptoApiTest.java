@@ -19,13 +19,17 @@ public class CryptoApiTest {
     @Test
     public void validate_consistency_of_candle_stick() {
 
+       final String  INSTRUMENT = "BTC_USDT";
+       final int TIME_FRAME = 1;
+
         ApiUtils
-                .getCandleStick("BTC_USDT", 15)
+                .getCandleStick(INSTRUMENT, TIME_FRAME)
                 .getResult()
                 .getData()
                 .stream()
                 .forEach(x -> {
 
+                    // Logic for consistency of candles
                     System.out.println("==== Value  ======= ");
                     System.out.println("O "+x.getO());
                     System.out.println("H "+x.getH());
